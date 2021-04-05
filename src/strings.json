@@ -1,0 +1,6 @@
+{
+    "api": {
+        "http": "http://voltra.tk",
+        "ws": "ws://voltra.tk"
+    } 
+}
