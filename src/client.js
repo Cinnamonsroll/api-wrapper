@@ -37,6 +37,7 @@ class client {
      * @returns Json object
      */
     changeSettings(username, avatarUrl){
+        deprecation('changeSettings()', "This feature has been removed on the website and will be replaced!");
         return require('./actions/changeSettings').run(username, avatarUrl, this.token);
     }
 }

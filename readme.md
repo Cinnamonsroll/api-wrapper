@@ -1,6 +1,7 @@
 # Voltra.api
 
 - [Refrences](#refrences) 
+- [OAuth](#oauth)
 
 
 ### Refrences
@@ -37,4 +38,15 @@ api.changeSettings('newusername', 'avatarurl')
 
 ```js
 api.socket.me // EXPERIMENTAL: Gives the bot's user object.
+```
+
+### OAuth
+
+```js
+const oauth = new voltra.oauth(); // new client
+```
+
+```js
+const user = await oauth.authorize(); // authorize user by token
+console.log('OAuth >', user) // log user
 ```

@@ -16,7 +16,7 @@ class socket {
 
         this.conn.on("connect", () => {
             this.conn.on("ratelimit", (data) => {
-                throw new Error(chalk.greenBright(`[${mname} | WS] -> ${data.text} For ${data.seconds}`))
+                return console.log(chalk.greenBright(mname), chalk.redBright(data));
             });
         });
     }
