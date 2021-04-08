@@ -33,12 +33,11 @@ class client {
     /**
      * 
      * @param {String} username New username.
-     * @param {String} avatarUrl Url to a png. (MUST NOT CONTAIN ANY SPACES ETC) (MUST BE A VALID IMAGE)
      * @returns Json object
      */
-    changeSettings(username, avatarUrl){
-        deprecation('changeSettings()', "This feature has been removed on the website and will be replaced!");
-        return require('./actions/changeSettings').run(username, avatarUrl, this.token);
+
+    changeUsername(username)   {
+        return require('./actions/newUsername').run(username, this.token);
     }
 }
 
