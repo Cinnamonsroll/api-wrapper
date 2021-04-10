@@ -1,6 +1,6 @@
 {
   "name": "voltra.api",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "The most simple way to create a bot for voltra.tk",
   "main": "inc.js",
   "scripts": {
