@@ -29,6 +29,22 @@ class client {
     getChannel(id){
         return require('./actions/getChannel').run(id, this.token);
     }
+    /**
+     * @param {string} guild Guild id
+     * @param {string} uid The user id
+     * @returns Json object
+     */
+    kickUser(guild, uid){
+        return require('./actions/kickUser').run(guild, uid, this.token);
+    }
+    /**
+     * @param {string} guild Guild id
+     * @param {string} uid The user id
+     * @returns Json object
+     */
+    banUser(guild, uid){
+        return require('./actions/banUser').run(guild, uid, this.token);
+    }
 
     /**
      * 
