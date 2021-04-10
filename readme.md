@@ -1,6 +1,7 @@
 # Voltra.api
 
 - [Refrences](#refrences) 
+- [Examples](#examples)
 - [OAuth](#oauth)
 
 
@@ -38,6 +39,45 @@ api.changeSettings('newusername', 'avatarurl')
 
 ```js
 api.socket.me // EXPERIMENTAL: Gives the bot's user object.
+```
+
+### Examples
+
+Simple bot connected to multiple channels:
+
+```js
+const voltra = require('voltra.api');
+const api = new voltra.client('BOT_TOKEN');
+const prefix = '!';
+
+(async () => {
+    async function joinGuild(id){ // join guild function (Callable)
+        return await api.joinGuild(id); 
+    }
+    api.socket.onMessage('channel1', async (message) => { // Provide a channel id here to connect and receive messages
+        console.log(`${message.author.username}:`, message.string)
+
+        if(!message.string.startsWith(prefix) || message.author.bot) return;
+        const args = message.string.slice(prefix.length).trim().split(' ');
+        const command = args.shift().toLowerCase();
+
+        if(command == 'commandname'){
+           // ...
+        }
+    });
+
+    api.socket.onMessage('channel2', async (message) => { // Provide a channel id here to connect and receive messages
+        console.log(`${message.author.username}:`, message.string)
+
+        if(!message.string.startsWith(prefix) || message.author.bot) return;
+        const args = message.string.slice(prefix.length).trim().split(' ');
+        const command = args.shift().toLowerCase();
+
+        if(command == 'commandname'){
+           // ...
+        }
+    });
+})()
 ```
 
 ### OAuth
