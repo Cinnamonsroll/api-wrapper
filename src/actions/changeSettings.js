@@ -1,18 +1,10 @@
-const strings = require('../strings.json');
-const fetch = require('node-fetch');
-
+const strings = require('../strings.json'),
+    fetch = require('../../utils/fetch.js');
 const run = (username, avatarUrl, token) => {
-
-    return fetch(`${strings.api.http}/bot/api/settings?sid=${token}&username=${username}&avatar=${avatarUrl}`, {
-        method: 'POST',
+    return fetch(`${strings.api.http}/bot/api/settings?sid=${token}&username=${username}&avatar=${avatarUrl}`, "POST", {
         headers: {
             "Content-Type": "multipart/form-data"
         }
-    }).then(data => data.json())
-        .then(res => {
-            return res;
-        });  
-
+    }, true)
 }
-
 module.exports.run = run;
