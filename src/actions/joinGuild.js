@@ -1,14 +1,6 @@
-const strings = require('../strings.json');
-const fetch = require('node-fetch');
-
+const strings = require('../strings.json'),
+    fetch = require('../../utils/fetch.js');
 const run = (guildId, token) => {
-
-    return fetch(`${strings.api.http}/g/api/join?sid=${token}&g=${guildId}`)
-        .then(data => data.json())
-            .then(res => {
-                return res;
-            });  
-
+    return fetch(`${strings.api.http}/g/api/join?sid=${token}&g=${guildId}`, "GET", {}, false)
 }
-
 module.exports.run = run;
