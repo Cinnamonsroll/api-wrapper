@@ -5,6 +5,6 @@ const run = (username, avatarUrl, token) => {
         headers: {
             "Content-Type": "multipart/form-data"
         }
-    }, true)
+    }, false)
 }
 module.exports.run = run;
